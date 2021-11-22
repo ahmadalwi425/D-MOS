@@ -23,7 +23,7 @@ class orderWaiterController extends Controller
         $stattrigger = "ditutup";
         $total_order = order::get()->count();
         $order = order::where('status_order',$stattrigger)->get();
-        return view ('pages.waiter.order.closeOrder', compact('order','total_order'));
+        return view ('pages.waiter.order.closeOrder', compact('order'));
     }
 
     public function create()

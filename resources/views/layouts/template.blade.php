@@ -127,10 +127,16 @@
 														@yield('content')
 														<p>Jumlah pesanan saat ini : {{$total_order}}</p>
 														<?php
-															echo ('<script>
-																var temp_jumlah = '.$_COOKIE['jumlahorder'].'
-															</script>');
+															if (isset($_COOKIE['jumlahorder'])) {//var lama
+																echo ('<script>
+																	var temp_jumlah = '.$_COOKIE['jumlahorder'].' 
+																</script>');
+															}else{
+																echo 'document.cookie = "jumlahorder={!! $total_order !!}; Secure";';
+															}
 														?>
+														
+														<input type="hidden" id="linknext" value="{{url('home')}}">
 													</div>
 												</div>
 											</div>
@@ -158,16 +164,20 @@
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 	
 	<script>
+		// var url = document.getElementById("linknext");
 		
 		function notif_me(jumlah) {
-			Push.create('Ada '+toString(jumlah)+' baru',{
+			Push.create('Ada '+jumlah+' pesanan baru',{
+				body: "Pesanan baru telah ditambahkan, sek sekarang!",
+				timeout: 4000,
+				link : document.getElementById("linknext"),
 			});
 		}
 		function autoRefreshPage(){
 			window.location.reload(1);
 			document.cookie = "jumlahorder={!! $total_order !!}; Secure";
 			if (document.cookie.split(';').some((item) => item.trim().startsWith('jumlahorder='))){
-				var temp_baru = {!! $total_order !!};
+				var temp_baru = {!! $total_order !!}; //jumlah terbaru
 				console.log(temp_jumlah);
 				console.log(temp_baru);
 				if(temp_baru>temp_jumlah){
