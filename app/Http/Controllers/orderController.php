@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\order;
 use App\Models\order_detail;
 use App\Models\masakan;
+use App\Models\jenis_masakan;
 use App\Models\QRcode;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use DB;
 
 class orderController extends Controller
 {
@@ -15,10 +17,6 @@ class orderController extends Controller
     public function index(Request $request)
     {
         
-
-        
-
-
     }
 
     public function pesanmeja(Request $request)
@@ -33,25 +31,6 @@ class orderController extends Controller
         
     }
 
-    public function checkIfAva()
-    {
-        $penyewaanList = Penyewaan::all();
-        $no_nota = "GM" . "-" . $this->random_strings(3);
-        $isAva = True;
-        for ($i = 0; $i < count($penyewaanList); $i++) {
-            if ($penyewaanList[$i]->no_nota === $no_nota) {
-                $isAva = False;
-            } else {
-                $isAva = True;
-            }
-        }
-        if ($isAva) {
-            return $no_nota;
-        } else {
-            $this->checkIfAva();
-        }
-        return $no_nota;
-    }
 
     public function cekDataPesanan($no)
     {
@@ -69,11 +48,6 @@ class orderController extends Controller
             }
         }
         
-
-
-
-
-
        
     }
 
@@ -91,9 +65,14 @@ class orderController extends Controller
         $nama_pemesan = $request->get('nama_pemesan');
         
         $masakan = masakan::all();
+        $makanan = masakan::where('id_jenis', 1)->get();
+         $minuman = masakan::where('id_jenis', 2)->get();
+        $jenisMasakan= jenis_masakan::all();
+
 
         // dd($nama_pemesan, $no_table, $no_pesanan);
-        return view('pages.customer.order', compact('no_table','no_pesanan', 'nama_pemesan', 'masakan'));
+        return view('pages.customer.order', 
+        compact('no_table','no_pesanan', 'nama_pemesan', 'masakan', 'jenisMasakan', 'minuman', 'makanan'));
         
         
     }
