@@ -23,36 +23,26 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded" style = "display: flex; justify-content:flex-end">
+	<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded" style = "display: flex;">
+	<div class="d-flex align-items-start flex-column mb-3"><br>
+		<h2>D-MOS Restaurant</h2>
+	</div>
 		<div class="row">
 			<div class="col">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart" ><img src="assets/images/cart.png" >Cart (<span
 							class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button>
-				
 			</div>
 		</div>
 	</nav>
 </div>
-<div class="d-flex align-items-center flex-column mb-4">
-<div class="d-flex align-items-end flex-column mb-3">
-            <form action="{{ route('order.index') }}" class="form-inline align-items-end" method="GET">
-                <p>Sort by:</p>
-                <select class="custom-select ml-3" name="sortBy">                
-                    <option value="1" >Makanan</option>
-                    <option value="2" >Minuman</option>
-                </select>
-                <button type="submit" class="btn btn-primary ml-3">Submit</button>
-            </form>
-        </div>      
-        </div>   
+
 	<!-- Main -->
 	<div class="container">
-		<div class= "row">
-		
+		<div class= "row justify-content-center">		
 			@foreach ($masakan as $item)
-			<div class="card" style="width: 18rem;">
+			<div class="card col-lg-3 col-md-4 col-sm-6 m-4  " ><br>
 				<img class="card-img-top" src="{{asset('storage/'.$item->gambar)}}" alt="Card image cap">
-				<div class="card-body">
+				<div class="card-body d-flex align-items-center flex-column mb-4">
 					<h5 class="card-title">{{$item->nama_masakan}}</h5>
 					<p class="card-text">{{$item->harga}} | {{$item->status}}</p> 
 					<a href="#" data-name="{{$item->nama_masakan}}" data-id="{{$item->id}}" data-price="{{$item->harga}}" class="add-to-cart btn btn-primary">Add to cart</a>
