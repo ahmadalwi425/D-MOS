@@ -40,6 +40,7 @@
 
 
 	<!-- Pre-loader end -->
+	
 	<div id="pcoded" class="pcoded">
 		<div class="pcoded-overlay-box"></div>
 		<div class="pcoded-container navbar-wrapper">
@@ -122,7 +123,14 @@
 														<span></span>
 													</div>
 													<div class="card-block">
+													<!-- <button onclick="autoRefreshPage()"> tes cookies</button> -->
 														@yield('content')
+														<p>Jumlah pesanan saat ini : {{$total_order}}</p>
+														<?php
+															echo ('<script>
+																var temp_jumlah = '.$_COOKIE['jumlahorder'].'
+															</script>');
+														?>
 													</div>
 												</div>
 											</div>
@@ -147,14 +155,35 @@
 	<script src="{{asset('assets')}}/js/argon.js?v=1.2.0"></script>
 	<script src="{{asset('assets/js/push.min.js')}}"></script>
 	<script src="{{asset('assets/js/jquery/jquery-2.1.1.min.js')}}" type="text/javascript"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	
 	<script>
 		
-		function notif_me() {
-			Push.create('Pesanan Baru',{
+		function notif_me(jumlah) {
+			Push.create('Ada '+toString(jumlah)+' baru',{
 			});
 		}
+		function autoRefreshPage(){
+			window.location.reload(1);
+			document.cookie = "jumlahorder={!! $total_order !!}; Secure";
+			if (document.cookie.split(';').some((item) => item.trim().startsWith('jumlahorder='))){
+				var temp_baru = {!! $total_order !!};
+				console.log(temp_jumlah);
+				console.log(temp_baru);
+				if(temp_baru>temp_jumlah){
+					notif_me(temp_baru-temp_jumlah);
+					document.cookie = "jumlahorder={!! $total_order !!}; Secure";
+				}
+			} else {
+				document.cookie = "jumlahorder={!! $total_order !!}; Secure";
+				console.log('tes2');
+			}
+		} 
 		
-		// setTimeout(function() {
+		
+		setTimeout('autoRefreshPage()', 15000);
+		
+		// setTimeout(function() 
 		// 	notif_me();
 		// },5000);
 	</script>

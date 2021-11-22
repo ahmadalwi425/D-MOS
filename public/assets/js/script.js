@@ -140,30 +140,30 @@ $window.scroll(function() {
 
  $(document).ready( function () {
     $('#menuTable').DataTable();
-    console.log('OK');
+    
 } );
 
 $(document).ready( function () {
     $('#menuJenisTable').DataTable();
-    console.log('OK');
+    
 } );
 
 $(document).ready( function () {
     $('#qrCodeTable').DataTable();
-    console.log('OK');
+    
 } );
 
 $(document).ready( function () {
     $('#waiterTable').DataTable();
-    console.log('OK');
+    
 } );
 
 $(document).ready( function () {
     $('#openOrderTable').DataTable();
-    console.log('OK');
+    
 } );
 
 $(document).ready( function () {
     $('#closeOrderTable').DataTable();
-    console.log('OK');
+    
 } );
