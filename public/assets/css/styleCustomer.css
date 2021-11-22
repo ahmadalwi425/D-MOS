@@ -1,5 +1,6 @@
 body {
   padding-top: 80px;
+  
 }
 
 .show-cart li {
@@ -9,13 +10,14 @@ body {
   margin-bottom: 20px;
 }
 .card-img-top {
-  width: 150px;
-  height: 150px;
+  max-width: 100%;
+  height: 50%;
+  align-self: center;
+ 
+}
+.navbar{
   align-self: center;
 }
-
-
-  
 body{
   outline: none;
   width: 100%;
@@ -190,4 +192,5 @@ body{
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
+}
 }

@@ -23,16 +23,21 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded" style = "display: flex; justify-content:flex-end">
+	<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded" style = "display: flex;">
+	<div class="d-flex align-items-start flex-column mb-3"><br>
+		<h2>D-MOS Restaurant</h2>
+	</div>
 		<div class="row">
 			<div class="col">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart" ><img src="assets/images/cart.png" >Cart (<span
 							class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button>
-				
 			</div>
 		</div>
 	</nav>
 </div>
+<<<<<<< HEAD
+
+	<!-- Main -->
 <div class="d-flex align-items-center flex-column mb-4">
 	<div class="d-flex mb-4 align-items-center" style="justify-content: center;">
 		<p>Sort by:</p>
@@ -45,11 +50,10 @@
 	<!-- Main -->
 	<div class="container">
 		<div class= "row" id= "makanan" style="display: block">
-		
 			@foreach ($makanan as $item)
 			<div class="card" style="width: 18rem;">
 				<img class="card-img-top" src="{{asset('storage/'.$item->gambar)}}" alt="Card image cap">
-				<div class="card-body">
+				<div class="card-body d-flex align-items-center flex-column mb-4">
 					<h5 class="card-title">{{$item->nama_masakan}}</h5>
 					<p class="card-text">{{$item->harga}} | {{$item->status}}</p> 
 					<a href="#" data-name="{{$item->nama_masakan}}" data-id="{{$item->id}}" data-price="{{$item->harga}}" class="add-to-cart btn btn-primary">Add to cart</a>
