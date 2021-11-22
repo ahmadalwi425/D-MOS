@@ -35,12 +35,23 @@
 		</div>
 	</nav>
 </div>
+<<<<<<< HEAD
 
 	<!-- Main -->
+<div class="d-flex align-items-center flex-column mb-4">
+	<div class="d-flex mb-4 align-items-center" style="justify-content: center;">
+		<p>Sort by:</p>
+		<select class="custom-select ml-3" name="sortBy" id = "selectMasakan" onclick = "showMasakan()"
+			style = "width : 300px; height: 40px; font-size: 15px;">   
+				<option value = "makanan">Makanan</option>
+				<option value = "minuman">Minuman</option>
+		</select>       
+	</div>
+	<!-- Main -->
 	<div class="container">
-		<div class= "row justify-content-center">		
-			@foreach ($masakan as $item)
-			<div class="card col-lg-3 col-md-4 col-sm-6 m-4  " ><br>
+		<div class= "row" id= "makanan" style="display: block">
+			@foreach ($makanan as $item)
+			<div class="card" style="width: 18rem;">
 				<img class="card-img-top" src="{{asset('storage/'.$item->gambar)}}" alt="Card image cap">
 				<div class="card-body d-flex align-items-center flex-column mb-4">
 					<h5 class="card-title">{{$item->nama_masakan}}</h5>
@@ -52,6 +63,23 @@
 			@endforeach
 			
 		</div>
+		<div class="row" id="minuman" style="display: none">
+		
+			@foreach ($minuman as $item)
+			<div class="card" style="width: 18rem;">
+				<img class="card-img-top" src="{{asset('storage/'.$item->gambar)}}" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">{{$item->nama_masakan}}</h5>
+					<p class="card-text">{{$item->harga}} | {{$item->status}}</p>
+					<a href="#" data-name="{{$item->nama_masakan}}" data-id="{{$item->id}}" data-price="{{$item->harga}}"
+						class="add-to-cart btn btn-primary">Add to cart</a>
+		
+				</div>
+			</div>
+			@endforeach
+		
+		</div>
+	<div>
 
 		
 		<!-- Modal -->
@@ -87,12 +115,18 @@
 			</div>
 		</div>
 
+		<script>
+		
+		</script>
 		<script type="text/javascript" src="{{asset('assets/js/jquery/jquery.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/jquery-ui/jquery-ui.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/popper.js/popper.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/bootstrap/js/bootstrap.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/scriptCustomer.js')}}"></script>
 
+		
+</div>
+</div>
 </body>
 
 </html>

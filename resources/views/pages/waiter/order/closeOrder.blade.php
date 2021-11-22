@@ -20,7 +20,9 @@
 </div>
 @endif
 {{-- <button onClick="notif_me()"> tes </button> --}}
-<table class="table table-bordered">
+<a href="{{url('print')}}" class="btn btn-primary">Print Laporan</a>
+<table class="table table-bordered" id="closeOrderTable">
+	<thead>
 	<tr>
 		<th>No Meja</th>
 		<th>No Pemesanan</th>
@@ -30,6 +32,8 @@
 		<th>Harga</th>
 		<th>Aksi</th>
 	</tr>
+	</thead>
+	<tbody>
 	@php $no = 1; @endphp
 	@foreach ($order as $ord)
 	<tr>
@@ -50,5 +54,6 @@
 		<th><a href="{{url('waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Lihat detail</a></th>
 	</tr>
 	@endforeach
+	</tbody>
 </table>
 @endsection

@@ -30,47 +30,15 @@
 	<!-- Style.css -->
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.mCustomScrollbar.css')}}">
+	<!-- <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"> -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+
 </head>
 
 <body>
-	<!-- Pre-loader start -->
-	<div class="theme-loader">
-		<div class="ball-scale">
-			<div class='contain'>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
 
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	<!-- Pre-loader end -->
 	<div id="pcoded" class="pcoded">
 		<div class="pcoded-overlay-box"></div>
@@ -162,9 +130,6 @@
 									</div>
 									
 								</div>
-
-								<div id="styleSelector">
-
 								</div>
 							</div>
 						</div>
@@ -254,10 +219,14 @@
 	<!-- Custom js -->
 	<script type="text/javascript" src="{{asset('assets/pages/dashboard/custom-dashboard.js')}}"></script>
 	<script type="text/javascript" src="{{asset('assets/js/script.js')}}"></script>
-	<script type="text/javascript " src="{{asset('assets/js/SmoothScroll.js')}}"></script>
+	<!-- <script type="text/javascript " src="{{asset('assets/js/SmoothScroll.js')}}"></script> -->
 	<script src="{{asset('assets/js/pcoded.min.js')}}"></script>
 	<script src="{{asset('assets/js/demo-12.js')}}"></script>
 	<script src="{{asset('assets/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+	<!-- <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script> -->
+	<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+	<!-- <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script> -->
+	<script src="http://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 	<script>
 		var $window = $(window);
         var nav = $('.fixed-button');
@@ -272,3 +241,4 @@
 </body>
 
 </html>
+
