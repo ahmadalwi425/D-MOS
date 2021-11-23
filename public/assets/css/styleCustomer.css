@@ -2,7 +2,13 @@ body {
   padding-top: 80px;
   
 }
-
+.img{
+  width: 20px;
+  height: 20px;
+}
+.col{
+  margin-right: 10px;
+}
 .show-cart li {
   display: flex;
 }
@@ -17,6 +23,15 @@ body {
 }
 .navbar{
   align-self: center;
+}
+.modal-dialog{
+  justify-content: center;
+  width: 100%;
+}
+
+.show-cart{
+  width: 100%;
+  justify-content: center;
 }
 body{
   outline: none;
@@ -41,7 +56,12 @@ body{
   background: #fff;
   border: thin solid #ededed;
 }
-
+.box-table{
+  justify-content: center;
+  
+  margin-left: 300px;
+  margin-right: 300px;
+}
 #box > img{
   width: 70px;
   height: auto;
