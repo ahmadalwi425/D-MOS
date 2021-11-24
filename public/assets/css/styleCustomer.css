@@ -14,6 +14,8 @@ body {
 }
 .card {
   margin-bottom: 20px;
+
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .card-img-top {
   max-width: 100%;
@@ -26,9 +28,15 @@ body {
 }
 .modal-dialog{
   justify-content: center;
-  width: 100%;
+  width: 500px;
+  padding-left: 3px;
+  padding-right: 110px;
 }
 
+.modal-title{
+  font-style: oblique;
+  color: #545454;
+}
 .show-cart{
   width: 100%;
   justify-content: center;
@@ -57,10 +65,9 @@ body{
   border: thin solid #ededed;
 }
 .box-table{
-  justify-content: center;
-  
-  margin-left: 300px;
-  margin-right: 300px;
+  width: 50px;
+  padding-left: 280px;
+  padding-right: 280px;
 }
 #box > img{
   width: 70px;

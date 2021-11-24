@@ -164,8 +164,8 @@ function displayCart() {
 	var output="";
 	for(var i in cartArray) {
 		output+=`<tr>
-			<td>${cartArray[i].name}</td></tr>
-			<td>${cartArray[i].price}</td>
+			<td>${cartArray[i].name}</td>
+			<td>Rp.${cartArray[i].price}</td></tr>
 			<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-id=${cartArray[i].id}>-</button>
 				<input type='number' class='item-count form-control' data-id='${cartArray[i].id}' value='${cartArray[i].count}'>
 				<button class ='plus-item btn btn-primary input-group-addon' data-id="${cartArray[i].id}">+</button></div></td>
