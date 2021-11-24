@@ -33,11 +33,11 @@ body{
 }
   
 #box{
-  width: 320px;
+  width: 450px;
   height: auto;
   margin: 0 auto;
-  background: #fff;
-  border: thin solid #ededed;
+  background: black;
+  border: thin solid black;
 }
 
 #box > img{
@@ -70,13 +70,12 @@ body{
   padding: 15px;
   box-sizing: border-box;
   font-size: .8em;
-  border: 1.5px solid #cccccc;
+  border: 1.5px solid #ffde59;
   transition: all .2s ease;
 }
 
 #box > form > input:focus {
-  border: thin solid #015b7e;
-  outline: none;
+  border: thin solid #ffde59;
 }
 
 ::-webkit-input-placeholder  {
