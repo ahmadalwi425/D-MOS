@@ -12,6 +12,7 @@ class orderWaiterController extends Controller
     
     public function index()
     {
+        // $total_order = order::get()->count();
         $stattrigger1 = "ditutup";
         $order = order::where('status_order','!=',$stattrigger1)->get();
         return view('pages.waiter.order.openOrder', compact('order'));
@@ -20,6 +21,7 @@ class orderWaiterController extends Controller
     public function closeOrder()
     {
         $stattrigger = "ditutup";
+        $total_order = order::get()->count();
         $order = order::where('status_order',$stattrigger)->get();
         return view ('pages.waiter.order.closeOrder', compact('order'));
     }

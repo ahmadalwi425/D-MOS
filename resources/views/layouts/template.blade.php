@@ -37,45 +37,10 @@
 </head>
 
 <body>
-	<!-- Pre-loader start -->
-	<div class="theme-loader">
-		<div class="ball-scale">
-			<div class='contain'>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
 
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	<!-- Pre-loader end -->
+	
 	<div id="pcoded" class="pcoded">
 		<div class="pcoded-overlay-box"></div>
 		<div class="pcoded-container navbar-wrapper">
@@ -158,7 +123,20 @@
 														<span></span>
 													</div>
 													<div class="card-block">
+													<!-- <button onclick="autoRefreshPage()"> tes cookies</button> -->
 														@yield('content')
+														<p>Jumlah pesanan saat ini : {{$total_order}}</p>
+														<?php
+															if (isset($_COOKIE['jumlahorder'])) {//var lama
+																echo ('<script>
+																	var temp_jumlah = '.$_COOKIE['jumlahorder'].' 
+																</script>');
+															}else{
+																echo 'document.cookie = "jumlahorder={!! $total_order !!}; Secure";';
+															}
+														?>
+														
+														<input type="hidden" id="linknext" value="{{url('home')}}">
 													</div>
 												</div>
 											</div>
@@ -166,9 +144,6 @@
 									</div>
 									
 								</div>
-
-								<div id="styleSelector">
-
 								</div>
 							</div>
 						</div>
@@ -186,14 +161,39 @@
 	<script src="{{asset('assets')}}/js/argon.js?v=1.2.0"></script>
 	<script src="{{asset('assets/js/push.min.js')}}"></script>
 	<script src="{{asset('assets/js/jquery/jquery-2.1.1.min.js')}}" type="text/javascript"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	
 	<script>
+		// var url = document.getElementById("linknext");
 		
-		function notif_me() {
-			Push.create('Pesanan Baru',{
+		function notif_me(jumlah) {
+			Push.create('Ada '+jumlah+' pesanan baru',{
+				body: "Pesanan baru telah ditambahkan, sek sekarang!",
+				timeout: 4000,
+				link : document.getElementById("linknext"),
 			});
 		}
+		function autoRefreshPage(){
+			window.location.reload(1);
+			document.cookie = "jumlahorder={!! $total_order !!}; Secure";
+			if (document.cookie.split(';').some((item) => item.trim().startsWith('jumlahorder='))){
+				var temp_baru = {!! $total_order !!}; //jumlah terbaru
+				console.log(temp_jumlah);
+				console.log(temp_baru);
+				if(temp_baru>temp_jumlah){
+					notif_me(temp_baru-temp_jumlah);
+					document.cookie = "jumlahorder={!! $total_order !!}; Secure";
+				}
+			} else {
+				document.cookie = "jumlahorder={!! $total_order !!}; Secure";
+				console.log('tes2');
+			}
+		} 
 		
-		// setTimeout(function() {
+		
+		setTimeout('autoRefreshPage()', 15000);
+		
+		// setTimeout(function() 
 		// 	notif_me();
 		// },5000);
 	</script>
@@ -258,7 +258,7 @@
 	<!-- Custom js -->
 	<script type="text/javascript" src="{{asset('assets/pages/dashboard/custom-dashboard.js')}}"></script>
 	<script type="text/javascript" src="{{asset('assets/js/script.js')}}"></script>
-	<script type="text/javascript " src="{{asset('assets/js/SmoothScroll.js')}}"></script>
+	<!-- <script type="text/javascript " src="{{asset('assets/js/SmoothScroll.js')}}"></script> -->
 	<script src="{{asset('assets/js/pcoded.min.js')}}"></script>
 	<script src="{{asset('assets/js/demo-12.js')}}"></script>
 	<script src="{{asset('assets/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>

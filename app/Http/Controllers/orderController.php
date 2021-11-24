@@ -39,7 +39,7 @@ class orderController extends Controller
         $qrcodeList = QRcode::all();
         for ($i = 0; $i < count($qrcodeList); $i++) {
             if ($qrcodeList[$i]->code_meja===$no_table) {
-                 do{
+                do{
                     $no_pesanan = random_int(100000, 999999);
                 }while(order::where('id',$no_pesanan)->get()->count() > 0);
                 return view('pages.customer.passtable', compact('no_pesanan','no_table'));   
@@ -123,7 +123,7 @@ class orderController extends Controller
             'nama' => $nama_pemesan,
             'tanggal'=> Carbon::now(),
             'harga'=> $total,
-            'status_order' => 'dipesan',
+            'status_order' => 'diproses',
         ]);
         foreach($pesanan as $row){
             // echo ($row['id']);
