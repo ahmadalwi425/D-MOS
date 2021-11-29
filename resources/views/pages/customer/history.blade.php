@@ -1,51 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/styleCustomer.css')}}">
+	<!-- Favicon icon -->
+	<link rel="icon" href="{{asset('assets/images/logo.png')}}" type="image/x-icon">
+	<!-- Google font-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+	<!-- Required Fremwork -->
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap/css/bootstrap.min.css')}}">
-	<title>Document</title>
+	<!-- themify-icons line icon -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/icon/themify-icons/themify-icons.css')}}">
+	<!-- ico font -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/icon/icofont/css/icofont.css')}}">
+	<!-- Style.css -->
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.mCustomScrollbar.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/styleCustomer.css')}}">
+
+	<style>
+		body {
+
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		body:before {
+			content: "";
+			background: rgba(45, 53, 69, 0.7);
+			position: absolute;
+			bottom: 0;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+	</style>
 </head>
-<body style="background: rgb(255, 234, 192)">
-	<div style=" display : flex;justify-content: center;">
-		<div
-			style="padding: 50px 50px; text-align: center; background: white; box-shadow: -6px 9px 153px -49px rgba(0,0,0,0.30);border-radius: 5px; margin-bottom: 100px">
-			<img src="{{asset('assets/images/logo.jpeg')}}" alt="lock" style="width: 50px; margin-bottom: 10px" />
-			<h5 style="color: rgb(214, 153, 19)">No Pesanan {{$no_pesanan}}</h5>
-			<h5 style="color: rgb(196, 147, 41)">{{$no_table}} / {{$nama_pemesan}}</h5>
-			<div style="background :rgb(214, 153, 19); height: 5px">
+
+<body style="background: url({{asset('assets/images/hero-bg.jpg')}})">
+	<div style=" display : flex;justify-content: center">
+		<div class="card p-5 m-5" style="background-color: rgba(37, 42, 52, 0.8) !important;">
+			<center>
+				<h1 style="color: white" class="mb-5">Pesanan Anda</h1>
+			</center>
+			<h5 style="color: #ffc107">No Pesanan {{$no_pesanan}}</h5>
+			<h5 style="color: #ffc107">{{$no_table}} / {{$nama_pemesan}}</h5>
+			<div style="background :#ffc107; height: 5px">
 				<p> </p>
 			</div>
-			<table class="table table-bordered mt-4">
-				<tr>
-					<th>No</th>
-					<th>Nama Masakan</th>
-					<th>Quantity</th>
-					<th>Harga Satuan</th>
-					<th>Total Harga</th>
-				</tr>
-				@php $no = 1; @endphp
-				@foreach ($pesanan as $p)
-				<tr>
-					<td>{{$no++}}</td>
-					<td>{{$p['name']}}</td>
-					<td>{{$p['count']}}</td>
-					<td>Rp. {{$p['price']}}</td>
-					<td>Rp. {{$p['price']}}</td>
-				</tr>
-				@endforeach
-		
+			<table class="table table-responsive mt-4" style="color: white; font-size: 16px !important;">
+			<tr>
+				<th>No</th>
+				<th>Nama Masakan</th>
+				<th>Quantity</th>
+				<th>Harga Satuan</th>
+				<th>Total Harga</th>
+			</tr>
+			@php $no = 1; @endphp
+			@foreach ($pesanan as $p)
+			<tr>
+				<td>{{$no++}}</td>
+				<td>{{$p['name']}}</td>
+				<td>{{$p['count']}}</td>
+				<td>Rp. {{$p['price']}}</td>
+				<td>Rp. {{$p['price']}}</td>
+			</tr>
+			@endforeach
+
 			</table>
-			<h5>Total Keseluruhan : Rp. {{$total}}</h5>
-			<hr class = "mt-5">
-			<p style="font-size: 12px">Silakan tunggu pesanan Anda</p>
-			<p style="font-size: 12px">Terima Kasih sudah memesanan di restoran kami</p>
+			<h4 style="color: white">Total Keseluruhan : Rp. {{$total}}</h4>
+			<hr class="mt-2" style="background: white">
+			<center><p style="font-size: 14px; color: white" >Silakan tunggu pesanan Anda</p>
+			<p style="font-size: 14px; color: white">Terima Kasih sudah memesanan di restoran kami</p></center>
+
 		</div>
-		</div>
-		
+
 
 	</div>
+	
+	<script type="text/javascript" src="{{asset('assets/js/jquery/jquery.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('assets/js/jquery-ui/jquery-ui.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('assets/js/popper.js/popper.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('assets/js/bootstrap/js/bootstrap.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('assets/js/scriptCustomer.js')}}"></script>
 </body>
+
 </html>

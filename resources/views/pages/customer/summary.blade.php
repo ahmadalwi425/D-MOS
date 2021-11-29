@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<!-- Favicon icon -->
-	<link rel="icon" href="{{asset('assets/images/logo.jpeg')}}" type="image/x-icon">
+	<link rel="icon" href="{{asset('assets/images/logo.png')}}" type="image/x-icon">
 	<!-- Google font-->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 	<!-- Required Fremwork -->
@@ -18,18 +18,33 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.mCustomScrollbar.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/styleCustomer.css')}}">
-</head>
-<body class="box-table" style="background: rgb(255, 234, 192)">
-	<div  style=" display : flex;justify-content: center; ">
+
+	<style>
+		body{
 		
-		<div style="padding: 30px; text-align: center; background: white; box-shadow: -6px 9px 153px -49px rgba(0,0,0,0.30);border-radius: 5px; margin-bottom: 100px">
-				<img src="{{asset('assets/images/logo.jpeg')}}" alt="lock" style="width: 50px; margin-bottom: 10px"/>
-				<h5 style="color: rgb(214, 153, 19)">No Pesanan {{$no_pesanan}}</h5>
-				<h5 style="color: rgb(196, 147, 41)">{{$no_table}} / {{$nama_pemesan}}</h5>
-				<div style="background :rgb(214, 153, 19); height: 5px">
+			background-repeat:no-repeat; background-size: cover;
+		}
+		body:before {
+		content: "";
+		background: rgba(45, 53, 69, 0.7);
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		}
+	</style>
+</head>
+<body style="background: url({{asset('assets/images/hero-bg.jpg')}})">
+	<div  style=" display : flex;justify-content: center">
+		<div class = "card p-5 m-5" style="background-color: rgba(37, 42, 52, 0.8) !important;">
+			<center><h1 style="color: white" class = "mb-5">Pesanan Anda</h1></center>
+				<h5 style="color: #ffc107">No Pesanan {{$no_pesanan}}</h5>
+				<h5 style="color: #ffc107">{{$no_table}} / {{$nama_pemesan}}</h5>
+				<div style="background :#ffc107; height: 5px">
 					<p> </p>
 				</div>
-				<table class = "table table-bordered mt-4 " >
+				<table class = "table table-responsive mt-4" style="color: white; font-size: 16px !important;" >
 					<tr>
 						<th>No</th>
 						<th>Nama Masakan</th>
@@ -49,7 +64,7 @@
 					@endforeach
 					
 				</table>
-				<h5>Total Keseluruhan : Rp. {{$total}}</h5>
+				<h5 style="color: white">Total Keseluruhan : Rp. {{$total}}</h5>
 				<input type="Submit" class="btn btn mt-3" style="background:rgb(214, 153, 19); color:rgb(255, 253, 248);" value="Pesan Sekarang" data-toggle="modal" data-target="#konfirmasi">
 
 		</div>
@@ -59,7 +74,7 @@
 {{-- Modal --}}
 	<div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
 		aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLongTitle">Konfirmasi Pesanan</h5>

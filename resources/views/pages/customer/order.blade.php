@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<!-- Favicon icon -->
-	<link rel="icon" href="{{asset('assets/images/logo.jpeg')}}" type="image/x-icon">
+	<link rel="icon" href="{{asset('assets/images/logo.png')}}" type="image/x-icon">
 	<!-- Google font-->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 	<!-- Required Fremwork -->
@@ -20,23 +20,46 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.mCustomScrollbar.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/styleCustomer.css')}}">
 	<title>Document</title>
+
+	<style>
+		.btn-custom{
+				font-weight: 500;
+				font-size: 15px;
+				letter-spacing: 1px;
+				display: inline-block;
+				padding: 9px 35px;
+				border-radius: 50px;
+				transition: 0.5s;
+				margin-top: 40px;
+				border: 2px solid #ffc107;
+				background: #fff7df;
+				color: #ffc107;
+		}
+
+		.btn-custom:hover{
+			background: #ffc107;
+			color: #fff;
+		}
+	</style>
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded" style = "display: flex;">
+	<nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded px-5" style = "display: flex; background: #252A34 !important;">
 	<div class="d-flex align-items-start flex-column mb-3"><br>
 		<h4>D-MOS Restaurant</h4>
 	</div>
 		<div class="row">
 			<div class="col ">
-					<img src="{{asset('assets/images/carts.png')}}"   style="width:45px; height:45px;"data-toggle="modal" data-target="#cart" >  (<span
-							class="total-count"> </span>) </button><img src="{{asset('assets/images/cartclear.png')}}"   style="width:45px; height:45px;" class="clear-cart" >
+					<img src="{{asset('assets/images/carts.png')}}"   style="width:30px; height:30px;"data-toggle="modal" data-target="#cart" ><label for="">Cart</label>  (<span
+							class="total-count"> </span>) </button>
+					
+					<img src="{{asset('assets/images/cartclear.png')}}"   style="width:30px; height:30px; " class="clear-cart" ><label for="" class = "">Bersihkan Cart</label>
 			</div>
 		</div>
 	</nav>
 </div>
 	<!-- Main -->
-<div class="d-flex align-items-center flex-column mb-4">
+<div class="d-flex align-items-center flex-column mb-4 " id="mainContent">
 	<div class="d-flex mb-4 align-items-center" style="justify-content: center;">
 		<p>Sort by:</p>
 		<select class="custom-select ml-3" name="sortBy" id = "selectMasakan" onclick = "showMasakan()"
@@ -46,15 +69,16 @@
 		</select>       
 	</div>
 	<!-- Main -->
-	<div class="container">
-		<div class= "row justify-content-center" id= "makanan" style="display: block ">
+	<div class="container" >
+		<div class= "row justify-content-center" id= "makanan" style="display: flex">
 			@foreach ($makanan as $item)
 			<div class="card col-lg-3  col-md-4  col-sm-6 m-4 " ><br>
 				<img class="card-img-top" src="{{asset('storage/'.$item->gambar)}}" alt="Card image cap">
 				<div class="card-body d-flex align-items-center flex-column mb-4">
 					<h5 class="card-title">{{$item->nama_masakan}}</h5>
 					<p class="card-text">{{$item->harga}} | {{$item->status}}</p> 
-					<a href="#" data-name="{{$item->nama_masakan}}" data-id="{{$item->id}}" data-price="{{$item->harga}}" class="add-to-cart btn btn-primary">Add to cart</a>
+					<a href="#" data-name="{{$item->nama_masakan}}" data-id="{{$item->id}}" data-price="{{$item->harga}}" 
+						class="add-to-cart btn-custom">Add to cart</a>
 
 				</div>
 			</div>
@@ -70,7 +94,7 @@
 					<h5 class="card-title">{{$item->nama_masakan}}</h5>
 					<p class="card-text">{{$item->harga}} | {{$item->status}}</p>
 					<a href="#" data-name="{{$item->nama_masakan}}" data-id="{{$item->id}}" data-price="{{$item->harga}}"
-						class="add-to-cart btn btn-primary">Add to cart</a>
+						class="add-to-cart btn-custom">Add to cart</a>
 		
 				</div>
 			</div>
