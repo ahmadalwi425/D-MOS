@@ -57,10 +57,10 @@
 						<div class="col-lg-4 containerLogin" style="background: black">
 							<form role="form" action="{{ route('login') }}" method="POST">
 								@csrf
-								<h2 style="margin-bottom: 20px">Pelase Login First</h2>
+								<h2 style="margin-bottom: 20px">Please Login First</h2>
 								<div class="input-group">
 									<span class="md-line"></span>
-									<input type="text" class="form-control" name="name" placeholder="Enter your email" >
+									<input type="text" class="form-control" name="name" placeholder="Enter your name" >
 									<span class="md-line"></span>
 								</div>
 								<br>

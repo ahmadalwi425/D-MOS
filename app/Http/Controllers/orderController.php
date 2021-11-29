@@ -14,10 +14,15 @@ use DB;
 class orderController extends Controller
 {
     
-    public function index(Request $request)
+    public function fetchOrder(Request $request)
     {
-        
+        $orders = order::all()->count();
+        return response()->json(
+            $orders
+        );
     }
+
+    
 
     public function pesanmeja(Request $request)
     {

@@ -48,13 +48,13 @@
 			<nav class="navbar header-navbar pcoded-header">
 				<div class="navbar-wrapper">
 
-					<div class="navbar-logo" style="background: #272725">
+					<div class="navbar-logo" style="background: #252A34">
 						<a class="mobile-menu" id="mobile-collapse" href="#!">
 							<i class="ti-menu"></i>
 						</a>
 						<a class = "mt-3 text-center">
-							<img class="img-fluid" src="{{asset('assets')}}/images/logo.jpeg" alt="Theme-Logo" style="height: 40px" />
-							<p>Ahlan Eatery & Beverage</p>
+							<img class="img-fluid" src="{{asset('assets')}}/images/logo.png" alt="Theme-Logo" style="height: 40px" />
+							<p>D-MOS</p>
 						</a>
 						<a class="mobile-options">
 							<i class="ti-more"></i>
@@ -123,6 +123,9 @@
 														<span></span>
 													</div>
 													<div class="card-block">
+														<button id="try">
+															Please Click
+														</button>
 													<!-- <button onclick="autoRefreshPage()"> tes cookies</button> -->
 														@yield('content')
 														<p>Jumlah pesanan saat ini : {{$total_order}}</p>
@@ -154,11 +157,7 @@
 	</div>
 		
 	</div>
-	<!-- Optional JS -->
-	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.min.js"></script>
-	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.extension.js"></script>
 	<!-- Argon JS -->
-	<script src="{{asset('assets')}}/js/argon.js?v=1.2.0"></script>
 	<script src="{{asset('assets/js/push.min.js')}}"></script>
 	<script src="{{asset('assets/js/jquery/jquery-2.1.1.min.js')}}" type="text/javascript"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -166,81 +165,16 @@
 	<script>
 		// var url = document.getElementById("linknext");
 		
-		function notif_me(jumlah) {
-			Push.create('Ada '+jumlah+' pesanan baru',{
-				body: "Pesanan baru telah ditambahkan, sek sekarang!",
-				timeout: 4000,
-				link : document.getElementById("linknext"),
-			});
-		}
-		function autoRefreshPage(){
-			window.location.reload(1);
-			document.cookie = "jumlahorder={!! $total_order !!}; Secure";
-			if (document.cookie.split(';').some((item) => item.trim().startsWith('jumlahorder='))){
-				var temp_baru = {!! $total_order !!}; //jumlah terbaru
-				console.log(temp_jumlah);
-				console.log(temp_baru);
-				if(temp_baru>temp_jumlah){
-					notif_me(temp_baru-temp_jumlah);
-					document.cookie = "jumlahorder={!! $total_order !!}; Secure";
-				}
-			} else {
-				document.cookie = "jumlahorder={!! $total_order !!}; Secure";
-				console.log('tes2');
-			}
-		} 
-		
-		
-		setTimeout('autoRefreshPage()', 15000);
+		 
+
 		
 		// setTimeout(function() 
 		// 	notif_me();
 		// },5000);
 	</script>
-	<!-- Warning Section Starts -->
-	<!-- Older IE warning message -->
-	<!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="assets/images/browser/chrome.png" alt="Chrome">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="assets/images/browser/firefox.png" alt="Firefox">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="assets/images/browser/opera.png" alt="Opera">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="assets/images/browser/safari.png" alt="Safari">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="assets/images/browser/ie.png" alt="">
-                    <div>IE (9 & above)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
-	<!-- Warning Section Ends -->
+
+	
+	
 	<!-- Required Jquery -->
 	<script type="text/javascript" src="{{asset('assets/js/jquery/jquery.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('assets/js/jquery-ui/jquery-ui.min.js')}}"></script>
@@ -276,6 +210,58 @@
                 nav.removeClass('active');
             }
         });
+	</script>
+	<script>
+		
+		$(document).ready(function(){
+			
+				fetchOrder()
+
+
+				$( "#try" ).click(function() {
+					alert("yok")
+				function notif_me() {
+						Push.create('Ada pesanan baru',{
+						body: "Pesanan baru telah ditambahkan, sek sekarang!",
+						timeout: 4000,
+						link : document.getElementById("linknext"),
+					});
+					}
+				});
+								
+				function autoRefreshPage(res){
+					document.cookie = "jumlahorder=" + res +"; Secure";
+					if (document.cookie.split(';').some((item) => item.trim().startsWith('jumlahorder='))){
+						var temp_baru = res; //jumlah terbaru
+						console.log("temp-jumlah " + temp_jumlah);
+						console.log( "temp-baru " + temp_baru);
+					if(temp_baru>temp_jumlah){
+						notif_me(temp_baru-temp_jumlah);
+						document.cookie = "jumlahorder= " + res + " ; Secure";
+						window.location.reload(1)
+					}
+				} else {
+					document.cookie = "jumlahorder= " + res +" ; Secure";
+					console.log('tes2');
+					}
+				}
+				
+	
+				function fetchOrder(){
+					$.ajax({
+						type: "GET",
+						url : "orderAll/fecthOrder", 
+						dataType : "json",
+						contentType: "application/json; charset=utf-8",
+						success : function (response){
+							console.log(response)
+							// notif_me()
+							
+						}
+					})
+				}
+				setInterval(fetchOrder,5000);
+			})
 	</script>
 </body>
 

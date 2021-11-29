@@ -18,10 +18,12 @@ Route::get('/', function () {
 
 
 
+
+
 Auth::routes();
 Route::post('/pesanmeja', [App\Http\Controllers\orderController::class, 'pesanmeja']);
 Route::get('/scan', [App\Http\Controllers\guessController::class, 'scan']);
-
+Route::get('orderAll/fecthOrder', [App\Http\Controllers\orderController::class, 'fetchOrder'])->name('order.fetchData');
 Route::resource('order', orderController::class);
 Route::get('/pesan/meja/{id}', [App\Http\Controllers\orderController::class, 'cekDataPesanan']);
 Route::post('/send/nama', [App\Http\Controllers\orderController::class, 'dataPesanan'])->name('sendNama');
