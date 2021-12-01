@@ -74,7 +74,7 @@
                 <h3>Meja : {{$no_table}}</h3>
                 <h3 class="mb-3">No Pemesanan : {{$no_pesanan}}</h3>
                 <hr style="color: aliceblue">
-                <form action="{{route('sendNama')}}" method="POST">
+                <form action="{{route('sendNama')}}" class = "md-5"method="POST">
                     @csrf
                     <input type="hidden" name="no_table" value="{{$no_table}}">
                     <input type="hidden" name="no_pesanan" value="{{$no_pesanan}}"><br>

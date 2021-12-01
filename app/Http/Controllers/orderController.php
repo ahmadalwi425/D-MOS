@@ -103,6 +103,7 @@ class orderController extends Controller
     {
         
     }
+    
     public function cekorder()
     {
         $stat = false;
@@ -128,7 +129,7 @@ class orderController extends Controller
             'nama' => $nama_pemesan,
             'tanggal'=> Carbon::now(),
             'harga'=> $total,
-            'status_order' => 'diproses',
+            'status_order' => 'dipesan',
         ]);
         foreach($pesanan as $row){
             // echo ($row['id']);

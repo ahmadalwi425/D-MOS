@@ -123,7 +123,7 @@
 														<span></span>
 													</div>
 													<div class="card-block">
-														<button id="try">
+														<button id="try" onclick="notif_me()">
 															Please Click
 														</button>
 													<!-- <button onclick="autoRefreshPage()"> tes cookies</button> -->
@@ -157,7 +157,11 @@
 	</div>
 		
 	</div>
+	<!-- Optional JS -->
+	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.min.js"></script>
+	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.extension.js"></script>
 	<!-- Argon JS -->
+	<script src="{{asset('assets')}}/js/argon.js?v=1.2.0"></script>
 	<script src="{{asset('assets/js/push.min.js')}}"></script>
 	<script src="{{asset('assets/js/jquery/jquery-2.1.1.min.js')}}" type="text/javascript"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -210,24 +214,18 @@
                 nav.removeClass('active');
             }
         });
+
+			
+				function notif_me() {
+						alert('k')
+					Push.create('Hello World!')
+				}
 	</script>
 	<script>
 		
 		$(document).ready(function(){
 			
 				fetchOrder()
-
-
-				$( "#try" ).click(function() {
-					alert("yok")
-				function notif_me() {
-						Push.create('Ada pesanan baru',{
-						body: "Pesanan baru telah ditambahkan, sek sekarang!",
-						timeout: 4000,
-						link : document.getElementById("linknext"),
-					});
-					}
-				});
 								
 				function autoRefreshPage(res){
 					document.cookie = "jumlahorder=" + res +"; Secure";

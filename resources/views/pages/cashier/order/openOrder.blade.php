@@ -44,13 +44,13 @@
 			@if($ord->status_order == "dipesan" && Auth::User()->level == 2)
 			<a href="{{url('updateStatus/dibayar/'.$ord->id)}}" class = "btn btn-primary">Dibayar</a>
 			@elseif($ord->status_order == "dibayar" && Auth::User()->level == 3)
-			<a href="{{url('updateStatus/dimasak/'.$ord->id)}}" class = "btn btn-primary">Dibayar</a>
+			<a href="{{url('updateStatus/dimasak/'.$ord->id)}}" class = "btn btn-primary">dimasak</a>
 			@elseif($ord->status_order == "dimasak" && Auth::User()->level == 3)
-			<a href="{{url('updateStatus/siap/'.$ord->id)}}" class = "btn btn-primary">Dibayar</a>
+			<a href="{{url('updateStatus/siap/'.$ord->id)}}" class = "btn btn-primary">Siap</a>
 			@elseif($ord->status_order == "siap" && Auth::User()->level == 4)
-			<a href="{{url('updateStatus/diantar/'.$ord->id)}}" class = "btn btn-primary">Dibayar</a>
+			<a href="{{url('updateStatus/diantar/'.$ord->id)}}" class = "btn btn-primary">Diantar</a>
 			@elseif($ord->status_order == "diantar" && Auth::User()->level == 4)
-			<a href="{{url('updateStatus/ditutup/'.$ord->id)}}" class = "btn btn-primary">Dibayar</a>
+			<a href="{{url('updateStatus/ditutup/'.$ord->id)}}" class = "btn btn-primary">Ditutup</a>
 			@else
 			<span class="badge badge-success">{{$ord->status_order}}</span>
 			@endif
