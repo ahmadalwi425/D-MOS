@@ -50,14 +50,6 @@
 							<span class="pcoded-mcaret"></span>
 						</a>
 					</li>
-					{{-- <li class=" ">
-						<a href="{{route('extra.index')}}">
-							<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-							<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Menu Extra</span>
-							<span class="pcoded-mcaret"></span>
-						</a>
-					</li> --}}
-					
 				</ul>
 				<li class="active">
 					<a href="{{route('qrcode.index')}}">
@@ -66,7 +58,24 @@
 						<span class="pcoded-mcaret"></span>
 					</a>
 				</li>
-
+				@elseif(Auth::user()->level == 3)
+				<ul class="pcoded-item pcoded-left-item">
+					<li class="active">
+						<a href="{{route('orderWaiter.index')}}">
+							<span class="pcoded-micon"><i class="ti-clipboard"></i><b>D</b></span>
+							<span class="pcoded-mtext" data-i18n="nav.dash.main">Order (Open)</span>
+							<span class="pcoded-mcaret"></span>
+						</a>
+					</li>
+					@elseif(Auth::user()->level == 4)
+				<ul class="pcoded-item pcoded-left-item">
+					<li class="active">
+						<a href="{{route('orderWaiter.index')}}">
+							<span class="pcoded-micon"><i class="ti-clipboard"></i><b>D</b></span>
+							<span class="pcoded-mtext" data-i18n="nav.dash.main">Order (Open)</span>
+							<span class="pcoded-mcaret"></span>
+						</a>
+					</li>
 				@endif
 				<div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" class = "mt--6">Log Out</div>
 				<li class="active">
