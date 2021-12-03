@@ -217,7 +217,6 @@
 
 			
 				function notif_me() {
-						alert('k')
 					Push.create('Hello World!')
 				}
 	</script>
@@ -253,7 +252,7 @@
 						contentType: "application/json; charset=utf-8",
 						success : function (response){
 							console.log(response)
-							// notif_me()
+							autoRefreshPage(response)
 							
 						}
 					})

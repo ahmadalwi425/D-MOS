@@ -28,7 +28,7 @@ class HomeController extends Controller
         }else{
         $stattrigger = 0;
         $order = order::where('status_order',$stattrigger)->get();
-        return view('pages.waiter.order.openOrder', compact('order'));
+        return view('pages.cashier.order.openOrder', compact('order'));
         }
     }
     
