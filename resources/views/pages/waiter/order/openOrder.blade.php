@@ -44,6 +44,7 @@
 			<td>
 			<a href="{{url('updateStatus/dibayar/'.$ord->id)}}" class = "btn btn-primary">Dibayar</a></td>
 			<td>{{$ord->harga}}</td>
+			<td><a href="{{url('/waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Detail</a></td>
 			@elseif($ord->status_order == "dibayar" && Auth::User()->level == 3)
 			<td>{{$ord->no_meja}}</td>
 			<td>{{$ord->id}}</td>
@@ -52,6 +53,7 @@
 			<td>
 			<a href="{{url('updateStatus/dimasak/'.$ord->id)}}" class = "btn btn-primary">Dimasak</a></td>
 			<td>{{$ord->harga}}</td>
+			<td><a href="{{url('/waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Detail</a></td>
 			@elseif($ord->status_order == "dimasak" && Auth::User()->level == 3)
 			<td>{{$ord->no_meja}}</td>
 			<td>{{$ord->id}}</td>
@@ -60,6 +62,7 @@
 			<td>
 			<a href="{{url('updateStatus/siap/'.$ord->id)}}" class = "btn btn-primary">Masakan siap</a></td>
 			<td>{{$ord->harga}}</td>
+			<td><a href="{{url('/waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Detail</a></td>
 			@elseif($ord->status_order == "siap" && Auth::User()->level == 4)
 			<td>{{$ord->no_meja}}</td>
 			<td>{{$ord->id}}</td>
@@ -68,6 +71,7 @@
 			<td>
 			<a href="{{url('updateStatus/diantar/'.$ord->id)}}" class = "btn btn-primary">Diantar</a></td>
 			<td>{{$ord->harga}}</td>
+			<td><a href="{{url('/waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Detail</a></td>
 			@elseif($ord->status_order == "diantar" && Auth::User()->level == 4)
 			<td>{{$ord->no_meja}}</td>
 			<td>{{$ord->id}}</td>
@@ -76,6 +80,7 @@
 			<td>
 			<a href="{{url('updateStatus/ditutup/'.$ord->id)}}" class = "btn btn-primary">Ditutup</a></td>
 			<td>{{$ord->harga}}</td>
+			<td><a href="{{url('/waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Detail</a></td>
 			@endif
 			
 			
