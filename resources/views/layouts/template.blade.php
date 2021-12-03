@@ -123,9 +123,7 @@
 														<span></span>
 													</div>
 													<div class="card-block">
-														<button id="try">
-															Please Click
-														</button>
+														<button onclick="notif_me()">Tes</button>
 													<!-- <button onclick="autoRefreshPage()"> tes cookies</button> -->
 														@yield('content')
 														<p>Jumlah pesanan saat ini : {{$total_order}}</p>
@@ -165,7 +163,6 @@
 	<script>
 		// var url = document.getElementById("linknext");
 		
-		 
 
 		
 		// setTimeout(function() 
@@ -213,55 +210,52 @@
 	</script>
 	<script>
 		
-		$(document).ready(function(){
-			
-				fetchOrder()
+		// $(document).ready(function(){
+		// 	fetchOrder()
+		// 	function fetchOrder(){
+		// 		$.ajax({
+		// 			type: "GET",
+		// 			url : "orderAll/fecthOrder", 
+		// 			dataType : "json",
+		// 			contentType: "application/json; charset=utf-8",
+		// 			success : function (response){
+		// 				// console.log(response)
+		// 				// notif_me()
+		// 			}
+		// 		})
+		// 	}
+		// 	setInterval(fetchOrder,5000);
+		// })
+				
+		function notif_me() {
+			console.log("masuk");
+			Push.create('Ada pesanan baru',{
+				body: "Pesanan baru telah ditambahkan, sek sekarang!",
 
-
-				$( "#try" ).click(function() {
-					alert("yok")
-				function notif_me() {
-						Push.create('Ada pesanan baru',{
-						body: "Pesanan baru telah ditambahkan, sek sekarang!",
-						timeout: 4000,
-						link : document.getElementById("linknext"),
-					});
-					}
-				});
-								
-				function autoRefreshPage(res){
-					document.cookie = "jumlahorder=" + res +"; Secure";
-					if (document.cookie.split(';').some((item) => item.trim().startsWith('jumlahorder='))){
-						var temp_baru = res; //jumlah terbaru
-						console.log("temp-jumlah " + temp_jumlah);
-						console.log( "temp-baru " + temp_baru);
-					if(temp_baru>temp_jumlah){
-						notif_me(temp_baru-temp_jumlah);
-						document.cookie = "jumlahorder= " + res + " ; Secure";
-						window.location.reload(1)
-					}
-				} else {
-					document.cookie = "jumlahorder= " + res +" ; Secure";
-					console.log('tes2');
-					}
-				}
+				
+			});
+		}
+		
+						
+		function autoRefreshPage(res){
+			document.cookie = "jumlahorder=" + res +"; Secure";
+			if (document.cookie.split(';').some((item) => item.trim().startsWith('jumlahorder='))){
+				var temp_baru = res; //jumlah terbaru
+				console.log("temp-jumlah " + temp_jumlah);
+				console.log( "temp-baru " + temp_baru);
+			if(temp_baru>temp_jumlah){
+				notif_me(temp_baru-temp_jumlah);
+				document.cookie = "jumlahorder= " + res + " ; Secure";
+				window.location.reload(1)
+			}
+		} else {
+			document.cookie = "jumlahorder= " + res +" ; Secure";
+			console.log('tes2');
+			}
+		}
 				
 	
-				function fetchOrder(){
-					$.ajax({
-						type: "GET",
-						url : "orderAll/fecthOrder", 
-						dataType : "json",
-						contentType: "application/json; charset=utf-8",
-						success : function (response){
-							console.log(response)
-							// notif_me()
-							
-						}
-					})
-				}
-				setInterval(fetchOrder,5000);
-			})
+				
 	</script>
 </body>
 
