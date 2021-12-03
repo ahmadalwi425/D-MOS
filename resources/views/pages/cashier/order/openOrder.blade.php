@@ -36,26 +36,54 @@
 		@php $no = 1; @endphp
 		@foreach ($order as $ord)
 		<tr>
+			@if($ord->status_order == "dipesan" && Auth::User()->level == 2)
 			<td>{{$ord->no_meja}}</td>
 			<td>{{$ord->id}}</td>
 			<td>{{$ord->nama}}</td>
 			<td>{{$ord->tanggal}}</td>
 			<td>
-			@if($ord->status_order == "dipesan" && Auth::User()->level == 2)
-			<a href="{{url('updateStatus/dibayar/'.$ord->id)}}" class = "btn btn-primary">Dibayar</a>
-			@elseif($ord->status_order == "dibayar" && Auth::User()->level == 3)
-			<a href="{{url('updateStatus/dimasak/'.$ord->id)}}" class = "btn btn-primary">dimasak</a>
-			@elseif($ord->status_order == "dimasak" && Auth::User()->level == 3)
-			<a href="{{url('updateStatus/siap/'.$ord->id)}}" class = "btn btn-primary">Siap</a>
-			@elseif($ord->status_order == "siap" && Auth::User()->level == 4)
-			<a href="{{url('updateStatus/diantar/'.$ord->id)}}" class = "btn btn-primary">Diantar</a>
-			@elseif($ord->status_order == "diantar" && Auth::User()->level == 4)
-			<a href="{{url('updateStatus/ditutup/'.$ord->id)}}" class = "btn btn-primary">Ditutup</a>
-			@else
-			<span class="badge badge-success">{{$ord->status_order}}</span>
-			@endif
-			</td>
+			<a href="{{url('updateStatus/dibayar/'.$ord->id)}}" class = "btn btn-primary">Dibayar</a></td>
 			<td>{{$ord->harga}}</td>
+			<td><a href="{{url('/waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Detail</a></td>
+			@elseif($ord->status_order == "dibayar" && Auth::User()->level == 3)
+			<td>{{$ord->no_meja}}</td>
+			<td>{{$ord->id}}</td>
+			<td>{{$ord->nama}}</td>
+			<td>{{$ord->tanggal}}</td>
+			<td>
+			<a href="{{url('updateStatus/dimasak/'.$ord->id)}}" class = "btn btn-primary">Dimasak</a></td>
+			<td>{{$ord->harga}}</td>
+			<td><a href="{{url('/waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Detail</a></td>
+			@elseif($ord->status_order == "dimasak" && Auth::User()->level == 3)
+			<td>{{$ord->no_meja}}</td>
+			<td>{{$ord->id}}</td>
+			<td>{{$ord->nama}}</td>
+			<td>{{$ord->tanggal}}</td>
+			<td>
+			<a href="{{url('updateStatus/siap/'.$ord->id)}}" class = "btn btn-primary">Masakan siap</a></td>
+			<td>{{$ord->harga}}</td>
+			<td><a href="{{url('/waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Detail</a></td>
+			@elseif($ord->status_order == "siap" && Auth::User()->level == 4)
+			<td>{{$ord->no_meja}}</td>
+			<td>{{$ord->id}}</td>
+			<td>{{$ord->nama}}</td>
+			<td>{{$ord->tanggal}}</td>
+			<td>
+			<a href="{{url('updateStatus/diantar/'.$ord->id)}}" class = "btn btn-primary">Diantar</a></td>
+			<td>{{$ord->harga}}</td>
+			<td><a href="{{url('/waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Detail</a></td>
+			@elseif($ord->status_order == "diantar" && Auth::User()->level == 4)
+			<td>{{$ord->no_meja}}</td>
+			<td>{{$ord->id}}</td>
+			<td>{{$ord->nama}}</td>
+			<td>{{$ord->tanggal}}</td>
+			<td>
+			<a href="{{url('updateStatus/ditutup/'.$ord->id)}}" class = "btn btn-primary">Ditutup</a></td>
+			<td>{{$ord->harga}}</td>
+			<td><a href="{{url('/waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Detail</a></td>
+			@endif
+			
+			
 			
 		</tr>
 		@endforeach
