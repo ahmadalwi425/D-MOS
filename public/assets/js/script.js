@@ -138,32 +138,32 @@ $window.scroll(function() {
     }
 });
 
- $(document).ready( function () {
-    $('#menuTable').DataTable();
+//  $(document).ready( function () {
+//     $('#menuTable').DataTable();
     
-} );
+// } );
 
-$(document).ready( function () {
-    $('#menuJenisTable').DataTable();
+// $(document).ready( function () {
+//     $('#menuJenisTable').DataTable();
     
-} );
+// } );
 
-$(document).ready( function () {
-    $('#qrCodeTable').DataTable();
+// $(document).ready( function () {
+//     $('#qrCodeTable').DataTable();
     
-} );
+// } );
 
-$(document).ready( function () {
-    $('#waiterTable').DataTable();
+// $(document).ready( function () {
+//     $('#waiterTable').DataTable();
     
-} );
+// } );
 
-$(document).ready( function () {
-    $('#openOrderTable').DataTable();
+// $(document).ready( function () {
+//     $('#openOrderTable').DataTable();
     
-} );
+// } );
 
-$(document).ready( function () {
-    $('#closeOrderTable').DataTable();
+// $(document).ready( function () {
+//     $('#closeOrderTable').DataTable();
     
-} );
+// } );

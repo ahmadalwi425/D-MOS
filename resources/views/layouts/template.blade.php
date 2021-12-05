@@ -32,7 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.mCustomScrollbar.css')}}">
 	<!-- <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"> -->
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"> -->
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+	<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> -->
 
 </head>
 
@@ -126,13 +126,13 @@
 													<!-- <button onclick="autoRefreshPage()"> tes cookies</button> -->
 														@yield('content')
 														<?php
-															if (isset($_COOKIE['jumlahorder'])) {//var lama
-																echo ('<script>
-																	var temp_jumlah = '.$_COOKIE['jumlahorder'].' 
-																</script>');
-															}else{
-																echo '<script>document.cookie = "jumlahorder={!! $total_order !!}; Secure";</script>';
-															}
+															// if (isset($_COOKIE['jumlahorder'])) {//var lama
+															// 	echo ('<script>
+															// 		var temp_jumlah = '.$_COOKIE['jumlahorder'].' 
+															// 	</script>');
+															// }else{
+															// 	echo '<script>document.cookie = "jumlahorder={!! $total_order !!}; Secure";</script>';
+															// }
 														?>
 														
 														<input type="hidden" id="linknext" value="{{url('home')}}">
@@ -171,7 +171,7 @@
 	
 	
 	<!-- Required Jquery -->
-	<script type="text/javascript" src="{{asset('assets/js/jquery/jquery.min.js')}}"></script>
+	<!-- <script type="text/javascript" src="{{asset('assets/js/jquery/jquery.min.js')}}"></script> -->
 	<script type="text/javascript" src="{{asset('assets/js/jquery-ui/jquery-ui.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('assets/js/popper.js/popper.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('assets/js/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -194,7 +194,7 @@
 	<!-- <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script> -->
 	<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
 	<!-- <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script> -->
-	<script src="http://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+	<!-- <script src="http://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script> -->
 	<script>
 		var $window = $(window);
         var nav = $('.fixed-button');
@@ -205,51 +205,51 @@
                 nav.removeClass('active');
             }
         });
-		function notif_me() {
-			// console.log("masuk");
-			Push.create('Ada pesanan baru',{
-				body: "Pesanan baru telah ditambahkan, sek sekarang!",
-			});
-		}
+		// function notif_me() {
+		// 	// console.log("masuk");
+		// 	Push.create('Ada pesanan baru',{
+		// 		body: "Pesanan baru telah ditambahkan, sek sekarang!",
+		// 	});
+		// }
 	</script>
 	<script>
-		$(document).ready(function(){
+		// $(document).ready(function(){
 			
-			fetchOrder()
+		// 	fetchOrder()
 							
-			function autoRefreshPage(res){
-				document.cookie = "jumlahorder=" + res +"; Secure";
-				if (document.cookie.split(';').some((item) => item.trim().startsWith('jumlahorder='))){
-					var temp_baru = res; //jumlah terbaru
-					console.log("temp-jumlah " + temp_jumlah);
-					console.log( "temp-baru " + temp_baru);
-				if(temp_baru>temp_jumlah){
-					notif_me(temp_baru-temp_jumlah);
-					document.cookie = "jumlahorder= " + res + " ; Secure";
-					window.location.reload(1)
-				}
-			} else {
-				document.cookie = "jumlahorder= " + res +" ; Secure";
-				console.log('tes2');
-				}
-			}
+		// 	function autoRefreshPage(res){
+		// 		document.cookie = "jumlahorder=" + res +"; Secure";
+		// 		if (document.cookie.split(';').some((item) => item.trim().startsWith('jumlahorder='))){
+		// 			var temp_baru = res; //jumlah terbaru
+		// 			console.log("temp-jumlah " + temp_jumlah);
+		// 			console.log( "temp-baru " + temp_baru);
+		// 		if(temp_baru>temp_jumlah){
+		// 			notif_me(temp_baru-temp_jumlah);
+		// 			document.cookie = "jumlahorder= " + res + " ; Secure";
+		// 			window.location.reload(1)
+		// 		}
+		// 	} else {
+		// 		document.cookie = "jumlahorder= " + res +" ; Secure";
+		// 		console.log('tes2');
+		// 		}
+		// 	}
 			
 
-			function fetchOrder(){
-				$.ajax({
-					type: "GET",
-					url : "orderAll/fecthOrder", 
-					dataType : "json",
-					contentType: "application/json; charset=utf-8",
-					success : function (response){
-						console.log(response)
-						autoRefreshPage(response)
+		// 	function fetchOrder(){
+		// 		$.ajax({
+		// 			type: "GET",
+		// 			url : "orderAll/fecthOrder", 
+		// 			dataType : "json",
+		// 			contentType: "application/json; charset=utf-8",
+		// 			success : function (response){
+		// 				console.log(response)
+		// 				autoRefreshPage(response)
 						
-					}
-				})
-			}
-			setInterval(fetchOrder,5000);
-		})
+		// 			}
+		// 		})
+		// 	}
+		// 	setInterval(fetchOrder,5000);
+		// })
 	</script>
 </body>
 
