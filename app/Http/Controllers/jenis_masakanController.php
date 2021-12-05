@@ -12,13 +12,13 @@ class jenis_masakanController extends Controller
     public function index()
     {
         $jenisMasakan = DB::table('jenis_masakan')->get();
-        return view ('pages.waiter.menu.indexJenisMenu', compact('jenisMasakan'));
+        return view ('pages.employee.menu.indexJenisMenu', compact('jenisMasakan'));
     }
 
 
     public function create()
     {
-        return view('pages.waiter.menu.createJenisMenu');
+        return view('pages.employee.menu.createJenisMenu');
     }
 
  
@@ -44,7 +44,7 @@ class jenis_masakanController extends Controller
     public function edit($id)
     {
         $jenisMasakan = DB::table('jenis_masakan')->where('id', $id)->first();
-        return view('pages.waiter.menu.editJenisMenu', compact('jenisMasakan'));
+        return view('pages.employee.menu.editJenisMenu', compact('jenisMasakan'));
     }
 
 

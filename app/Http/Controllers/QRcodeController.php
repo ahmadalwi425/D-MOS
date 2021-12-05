@@ -12,13 +12,13 @@ class QRcodeController extends Controller
     public function index()
     {
         $qrcode= QRcode::get();
-        return view('pages.waiter.qrcode.indexQR', compact('qrcode'));
+        return view('pages.employee.qrcode.indexQR', compact('qrcode'));
     }
 
     
     public function create()
     {
-        return view('pages.waiter.qrcode.createQR');
+        return view('pages.employee.qrcode.createQR');
     }
 
     
@@ -56,7 +56,7 @@ class QRcodeController extends Controller
     public function edit($id)
     {
         $qrcode = QRcode::where('id', $id)->first();
-        return view('pages.waiter.qrcode.editQR', compact('qrcode'));
+        return view('pages.employee.qrcode.editQR', compact('qrcode'));
     }
 
    

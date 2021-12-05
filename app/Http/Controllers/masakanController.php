@@ -14,14 +14,14 @@ class masakanController extends Controller
     public function index()
     {
         $masakan = masakan::with('jenis_masakan')->get();
-        return view ('pages.waiter.menu.indexMenu', compact('masakan'));
+        return view ('pages.employee.menu.indexMenu', compact('masakan'));
     }
 
 
     public function create()
     {
         $jenis_masakan = jenis_masakan::all();
-        return view('pages.waiter.menu.createMenu', compact('jenis_masakan'));
+        return view('pages.employee.menu.createMenu', compact('jenis_masakan'));
     }
 
 
@@ -66,7 +66,7 @@ class masakanController extends Controller
     {
         $masakan = masakan::with('jenis_masakan')->where('id', $id)->first();
         $jenis_masakan = jenis_masakan::all();
-        return view('pages.waiter.menu.editMenu', compact('masakan', 'jenis_masakan'));
+        return view('pages.employee.menu.editMenu', compact('masakan', 'jenis_masakan'));
     }
 
 

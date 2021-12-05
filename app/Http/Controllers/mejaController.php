@@ -10,7 +10,7 @@ class mejaController extends Controller
 {
     public function index() {
         $meja = meja::all();
-        return view ('pages.waiter.table.indexTable', ['meja' => $meja]);
+        return view ('pages.employee.table.indexTable', ['meja' => $meja]);
     }
 
     public function store(Request $request) {
@@ -24,7 +24,7 @@ class mejaController extends Controller
     public function generate($id) {
         $meja = meja::findOrFail($id);
         $qrcode = QrCode::size(400)->generate($meja->name);
-        return view ('pages.waiter.table.qrcode',compact('qrcode'));
+        return view ('pages.employee.table.qrcode',compact('qrcode'));
     }
 
     public function destroy($id) {

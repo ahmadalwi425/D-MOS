@@ -15,7 +15,7 @@ class orderWaiterController extends Controller
         // $total_order = order::get()->count();
         $stattrigger1 = "ditutup";
         $order = order::where('status_order','!=',$stattrigger1)->get();
-        return view('pages.cashier.order.openOrder', compact('order'));
+        return view('pages.employee.order.openOrder', compact('order'));
     }
 
     public function closeOrder()
@@ -23,7 +23,7 @@ class orderWaiterController extends Controller
         $stattrigger = "ditutup";
         $total_order = order::get()->count();
         $order = order::where('status_order',$stattrigger)->get();
-        return view ('pages.cashier.order.closeOrder', compact('order'));
+        return view ('pages.employee.order.closeOrder', compact('order'));
     }
 
     public function create()
@@ -43,7 +43,7 @@ class orderWaiterController extends Controller
         $order = order::where('id',$id)->first();
         $orderDetail = order_detail::where('id_order', $id)->with('masakan')->get();
         // dd($data);
-        return view('pages.cashier.order.orderDetail', compact('order', 'orderDetail'));
+        return view('pages.employee.order.orderDetail', compact('order', 'orderDetail'));
 
 
     }
@@ -70,7 +70,7 @@ class orderWaiterController extends Controller
 
         $order = order::where('id',$id)->get();
         $orderDetail = order_detail::where('id_order', $id)->get();
-        return view('pages.cashier.order.closeOrder', compact('order', 'orderDetail'));
+        return view('pages.employee.order.closeOrder', compact('order', 'orderDetail'));
     }
 
     public function konfirmasi($id, $code)
@@ -88,13 +88,13 @@ class orderWaiterController extends Controller
     public function print(){
         $order = order::where('status_order','ditutup')->get();
         $order_detail = order_detail::with('masakan')->get();
-        $pdf = PDF::loadview('pages.cashier.order.order_pdf',compact('order','order_detail'));
+        $pdf = PDF::loadview('pages.employee.order.order_pdf',compact('order','order_detail'));
         return $pdf->download('laporan-order-pdf.pdf');
     }
     public function print2($id){
         $order = order::all();
 
-        $pdf = PDF::loadview('pages.cashier.order.order_pdf',['order'=>$order]);
+        $pdf = PDF::loadview('pages.employee.order.order_pdf',['order'=>$order]);
         return $pdf->download('laporan-order-pdf');
     }
     

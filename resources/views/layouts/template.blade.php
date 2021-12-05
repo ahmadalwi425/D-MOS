@@ -123,12 +123,8 @@
 														<span></span>
 													</div>
 													<div class="card-block">
-														<button id="try" onclick="notif_me()">
-															Please Click
-														</button>
 													<!-- <button onclick="autoRefreshPage()"> tes cookies</button> -->
 														@yield('content')
-														<p>Jumlah pesanan saat ini : {{$total_order}}</p>
 														<?php
 															if (isset($_COOKIE['jumlahorder'])) {//var lama
 																echo ('<script>

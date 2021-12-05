@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
         if($this->app->environment('production')) {
             \URL::forceScheme('https');
         }
-        $total_order = DB::table('order')->get()->count();
-        View::share('total_order',$total_order); 
+        // $total_order = DB::table('order')->get()->count();
+        // View::share('total_order',$total_order); 
     }
 }
