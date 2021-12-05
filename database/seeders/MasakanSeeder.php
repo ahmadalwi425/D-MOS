@@ -19,7 +19,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Bakso',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/bakso.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -27,7 +26,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Brownies Tape',
                 'harga' => '25000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/Browies-Tape.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -35,7 +33,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' => 'Chicken Finger',
                 'harga' => '12000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/chicken-finger.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -43,7 +40,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Martabak Malabar',
                 'harga' => '20000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/Martabak-malabar.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -51,7 +47,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Mie Aceh',
                 'harga' => '20000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/mie-aceh.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -59,7 +54,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Nasi Grombyang',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/nasi grombyang.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -67,7 +61,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Nasi Langgi Solo',
                 'harga' => '20000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/nasi langgi solo.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -75,7 +68,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Nasi Timbel Sunda',
                 'harga' => '15000',
                 'status' =>'Tersedia', 
-                'gambar' => 'images/nasi timbel sunda.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -83,7 +75,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Nasi Uduk',
                 'harga' => '10000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/nasi uduk.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -91,7 +82,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Nasi Gandul',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/nasi-gandul.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -99,7 +89,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Nasi Goreng Cakalang',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/nasi-goreng-cakalang.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -107,7 +96,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Nasi Gudeg',
                 'harga' => '10000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/nasi-gudeg.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -115,7 +103,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Nasi Jamblang',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/nasi-jamblang.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -123,7 +110,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Nasi Langgi',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/Nasi-Langgi.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -131,7 +117,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Nasi Megono',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/nasi-megono.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -139,7 +124,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Omelet Mie',
                 'harga' => '10000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/omelet-mi.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -147,7 +131,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Pia Tape',
                 'harga' => '15000',
                 'status' => 'Kosong',
-                'gambar' => 'images/Pia-Tape.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -155,7 +138,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Sate',
                 'harga' => '20000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/sate.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -163,7 +145,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Siomay',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/siomay.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -171,7 +152,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Soto',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/soto.jpg',
                 'id_jenis' =>1,
             ],
             [
@@ -179,7 +159,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Cendol',
                 'harga' => '8000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/cendol.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -187,7 +166,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Dalgona Coffee',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/Dalgona-Coffee.webp',
                 'id_jenis' =>2,
             ],
             [
@@ -195,7 +173,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Es Teler',
                 'harga' => '10000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/es teler.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -203,7 +180,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Flavoured Soda',
                 'harga' => '12000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/flavoured-soda.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -211,7 +187,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Flavoured Tea',
                 'harga' => '8000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/flavoured-tea.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -219,7 +194,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Fresh Milk',
                 'harga' => '10000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/fresh-milk.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -227,7 +201,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Fruit Juice',
                 'harga' => '10000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/fruit-juice.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -235,7 +208,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Fruit Tea',
                 'harga' => '8000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/fruit-tea.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -243,7 +215,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Fruit Yogurt',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/fruit-yogurt.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -251,7 +222,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Hot Chocolate',
                 'harga' => '10000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/hot-chocolate.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -259,7 +229,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Hot Tea',
                 'harga' => '6000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/hot-tea.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -267,7 +236,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Ice Blend',
                 'harga' => '10000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/ice-blend.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -275,7 +243,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Ice Drink',
                 'harga' => '10000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/ice-drink.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -283,7 +250,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Latte',
                 'harga' => '12000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/latte.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -291,7 +257,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Macchiato',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/macchiato.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -299,7 +264,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Milk Shake',
                 'harga' => '10000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/milkshake.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -307,7 +271,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Milk Tea',
                 'harga' => '9000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/milktea.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -315,7 +278,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Boba',
                 'harga' => '15000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/Minuman-Boba.webp',
                 'id_jenis' =>2,
             ],
             [
@@ -323,7 +285,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Mojito',
                 'harga' => '10000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/mojito.jpg',
                 'id_jenis' =>2,
             ],
             [
@@ -331,7 +292,6 @@ class MasakanSeeder extends Seeder
                 'nama_masakan' =>'Smoothie',
                 'harga' => '12000',
                 'status' => 'Tersedia',
-                'gambar' => 'images/smoothie.jpg',
                 'id_jenis' =>2,
             ],
         ];
