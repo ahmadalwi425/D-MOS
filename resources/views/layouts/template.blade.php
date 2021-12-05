@@ -154,10 +154,6 @@
 		
 	</div>
 	<!-- Optional JS -->
-	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.min.js"></script>
-	<script src="{{asset('assets')}}/vendor/chart.js/dist/Chart.extension.js"></script>
-	<!-- Argon JS -->
-	<script src="{{asset('assets')}}/js/argon.js?v=1.2.0"></script>
 	<script src="{{asset('assets/js/push.min.js')}}"></script>
 	<script src="{{asset('assets/js/jquery/jquery-2.1.1.min.js')}}" type="text/javascript"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
