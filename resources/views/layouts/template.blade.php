@@ -214,7 +214,7 @@
             }
         });
 		function notif_me() {
-			console.log("masuk");
+			// console.log("masuk");
 			Push.create('Ada pesanan baru',{
 				body: "Pesanan baru telah ditambahkan, sek sekarang!",
 			});
