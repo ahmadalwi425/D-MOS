@@ -33,7 +33,7 @@ describe("Ketegori Menu Test",() => {
 		cy.get("#login").click();
 		cy.get('#menuGroup').click();
 		cy.get('#jenisMenuOption').click();
-		cy.get('#delete1').click();
+		cy.get('#delete2').click();
 		// cy.get('#alert').contains('Success');
 
 	});
