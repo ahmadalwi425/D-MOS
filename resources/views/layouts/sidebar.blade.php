@@ -32,7 +32,7 @@
 			<li class="pcoded-hasmenu">
 				<a href="javascript:void(0)">
 					<span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-					<span class="pcoded-mtext" data-i18n="nav.basic-components.main">Menu Restoran</span>
+					<span class="pcoded-mtext" data-i18n="nav.basic-components.main" id = "menuGroup">Menu Restoran</span>
 					<span class="pcoded-mcaret"></span>
 				</a>
 				<ul class="pcoded-submenu">
@@ -46,7 +46,7 @@
 					<li class=" ">
 						<a href="{{route('jenis_masakan.index')}}">
 							<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-							<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Kategori Menu</span>
+							<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs" id = "jenisMenuOption">Kategori Menu</span>
 							<span class="pcoded-mcaret"></span>
 						</a>
 					</li>
@@ -75,23 +75,23 @@
 						</a>
 					</li>
 					<li class="pcoded-hasmenu">
-						<a href="javascript:void(0)">
+						<a href="javascript:void(0)" id = "menuGroup">
 							<span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-							<span class="pcoded-mtext" data-i18n="nav.basic-components.main">Menu Restoran</span>
+							<span class="pcoded-mtext" data-i18n="nav.basic-components.main" id = "menuGroup">Menu Restoran</span>
 							<span class="pcoded-mcaret"></span>
 						</a>
 						<ul class="pcoded-submenu">
 							<li class=" ">
-								<a href="{{route('masakan.index')}}">
+								<a href="{{route('masakan.index')}}" >
 									<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
 									<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Menu</span>
 									<span class="pcoded-mcaret"></span>
 								</a>
 							</li>
 							<li class=" ">
-								<a href="{{route('jenis_masakan.index')}}">
+								<a href="{{route('jenis_masakan.index')}}" >
 									<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-									<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Kategori Menu</span>
+									<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs" id = "jenisMenuOption">Kategori Menu</span>
 									<span class="pcoded-mcaret"></span>
 								</a>
 							</li>
@@ -122,7 +122,7 @@
 					<li class="pcoded-hasmenu">
 						<a href="javascript:void(0)">
 							<span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-							<span class="pcoded-mtext" data-i18n="nav.basic-components.main">Menu Restoran</span>
+							<span class="pcoded-mtext" data-i18n="nav.basic-components.main" id = "menuGroup">Menu Restoran</span>
 							<span class="pcoded-mcaret"></span>
 						</a>
 						<ul class="pcoded-submenu">
@@ -136,7 +136,7 @@
 							<li class=" ">
 								<a href="{{route('jenis_masakan.index')}}">
 									<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-									<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Kategori Menu</span>
+									<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs" id = "jenisMenuOption">Kategori Menu</span>
 									<span class="pcoded-mcaret"></span>
 								</a>
 							</li>
