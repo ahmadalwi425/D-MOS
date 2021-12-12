@@ -39,7 +39,7 @@
 					<li class=" ">
 						<a href="{{route('masakan.index')}}">
 							<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-							<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Menu</span>
+							<span class="pcoded-mtext" data-i18n="nav.basic-components.alert" menuOption>Menu</span>
 							<span class="pcoded-mcaret"></span>
 						</a>
 					</li>
@@ -84,7 +84,7 @@
 							<li class=" ">
 								<a href="{{route('masakan.index')}}" >
 									<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-									<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Menu</span>
+									<span class="pcoded-mtext" data-i18n="nav.basic-components.alert" menuOption>Menu</span>
 									<span class="pcoded-mcaret"></span>
 								</a>
 							</li>
@@ -129,7 +129,7 @@
 							<li class=" ">
 								<a href="{{route('masakan.index')}}">
 									<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-									<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Menu</span>
+									<span class="pcoded-mtext" data-i18n="nav.basic-components.alert" id = "menuOption">Menu</span>
 									<span class="pcoded-mcaret"></span>
 								</a>
 							</li>

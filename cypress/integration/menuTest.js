@@ -1,4 +1,4 @@
-describe("Ketegori Menu Test",() => {
+describe("Menu Test",() => {
 	it('Add Data ',() => {
 		cy.visit("/login");
 		cy.get("#name").type("waiter").should("have.value","waiter");
@@ -18,7 +18,7 @@ describe("Ketegori Menu Test",() => {
 		cy.get("#password").type("waiter123").should("have.value","waiter123");
 		cy.get("#login").click();
 		cy.get('#menuGroup').click();
-		cy.get('#jenisMenuOption').click();
+		cy.ge('#jenisMenuOption').click();
 		cy.get('#edit4').click();
 		cy.get('#nama_jenis').clear();
 		cy.get('#nama_jenis').type("beverages").should("have.value","beverages");
