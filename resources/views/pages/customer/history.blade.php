@@ -72,7 +72,7 @@
 			</table>
 			<h4 style="color: white">Total Keseluruhan : Rp. {{$total}}</h4>
 			<hr class="mt-2" style="background: white">
-			<center><p style="font-size: 14px; color: white" >Silakan tunggu pesanan Anda</p>
+			<center><p style="font-size: 14px; color: white" id="ress" value="1">Silakan tunggu pesanan Anda</p>
 			<p style="font-size: 14px; color: white">Terima Kasih sudah memesanan di restoran kami</p></center>
 
 		</div>

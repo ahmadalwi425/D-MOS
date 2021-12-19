@@ -118,7 +118,7 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> --}}
 
     <!-- Template Main JS File -->
-    <script src="{{asset('assets/js/scriptAuth.js')}}"></script>
+    <!-- <script src="{{asset('assets/js/scriptAuth.js')}}"></script> -->
 
 </body>
 
