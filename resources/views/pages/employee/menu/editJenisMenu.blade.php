@@ -24,6 +24,6 @@
 				<input type="text" name="nama_jenis" class="form-control" id="nama_jenis"
 					value="{{ $jenisMasakan->nama_jenis }}" aria-describedby="nama_masakan">
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-primary" id = "submit">Submit</button>
 		</form>
 @endsection

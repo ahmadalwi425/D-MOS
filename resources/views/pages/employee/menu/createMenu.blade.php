@@ -46,7 +46,7 @@
         </div>
         <div class="form-group">
             <label for="gambar">Foto Masakan</label>
-            <input type="file" class="form-control" id="gambar" name="gambar">
+            <input type="file" class="form-control" id="gambar" name="gambar" i>
         </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>

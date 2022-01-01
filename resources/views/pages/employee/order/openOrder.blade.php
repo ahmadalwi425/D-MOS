@@ -42,7 +42,7 @@
 			<td>{{$ord->nama}}</td>
 			<td>{{$ord->tanggal}}</td>
 			<td>
-			<a href="{{url('updateStatus/dibayar/'.$ord->id)}}" class = "btn btn-primary">Dibayar</a></td>
+			<a href="{{url('updateStatus/dibayar/'.$ord->id)}}" class = "btn btn-primary" id="Dibayar">Dibayar</a></td>
 			<td>{{$ord->harga}}</td>
 			<td><a href="{{url('/waiter/detailorder/'.$ord->id)}}" class = "btn btn-primary">Detail</a></td>
 			@elseif($ord->status_order == "dibayar" && Auth::User()->level == 3)
