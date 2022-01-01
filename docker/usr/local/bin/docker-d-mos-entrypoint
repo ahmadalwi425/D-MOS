@@ -25,7 +25,7 @@ if [[ -z "$APP_DEBUG" ]]; then
 fi
 
 if [[ -z "$DB_HOST" ]]; then
-    export DB_HOST=10.0.0.173
+    export DB_HOST=10.0.0.136
     echo -e "\e[33mENV undefined: DB_HOST,\e[0m use default $DB_HOST"
 fi 
 
@@ -45,7 +45,7 @@ if [[ -z "$DB_USERNAME" ]]; then
 fi 
 
 if [[ -z "$DB_PASSWORD" ]]; then
-    export DB_PASSWORD=Admin@123
+    export DB_PASSWORD=@Admin123
     echo -e "\e[33mENV undefined: DB_PASSWORD,\e[0m use default $DB_PASSWORD"
 fi
 
