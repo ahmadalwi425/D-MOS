@@ -14,7 +14,9 @@ class masakanController extends Controller
     public function index()
     {
         $masakan = masakan::with('jenis_masakan')->get();
+        // dd($masakan);
         return view ('pages.employee.menu.indexMenu', compact('masakan'));
+        
     }
 
 

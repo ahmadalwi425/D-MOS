@@ -23,7 +23,7 @@
 		<input type="nama" name="nama_jenis" class="form-control" id="nama_jenis">
 
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary" id = "submit">Submit</button>
 </form>
 
 @endsection

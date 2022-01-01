@@ -60,16 +60,16 @@
 								<h2 style="margin-bottom: 20px">Please Login First</h2>
 								<div class="input-group">
 									<span class="md-line"></span>
-									<input type="text" class="form-control" name="name" placeholder="Enter your name" >
+									<input type="text" class="form-control" name="name" placeholder="Enter your name" id="name">
 									<span class="md-line"></span>
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="md-line"></span>
-									<input type="password" class="form-control" name="password" placeholder="Password">
+									<input type="password" class="form-control" name="password" placeholder="Password" password="password" id="password">
 									<span class="md-line"></span>
 								</div>
-								<div class="text-center"><button type="submit" class="btn-get-started scrollto">Login</button></div>
+								<div class="text-center"><button type="submit" class="btn-get-started scrollto" id="login">Login</button></div>
 							</form>
 						</div>
 						</center>
