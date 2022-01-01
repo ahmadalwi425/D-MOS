@@ -40,20 +40,15 @@ class orderController extends Controller
     public function cekDataPesanan($no)
     {
         $no_table = $no;
-
-        $qrcodeList = QRcode::all();
-        for ($i = 0; $i < count($qrcodeList); $i++) {
-            if ($qrcodeList[$i]->code_meja===$no_table) {
-                do{
-                    $no_pesanan = random_int(100000, 999999);
-                }while(order::where('id',$no_pesanan)->get()->count() > 0);
-                return view('pages.customer.passtable', compact('no_pesanan','no_table'));   
-            } else {
-                return view('pages.customer.QRcodeNotFound');
-            }
+        $qrcodeList = QRcode::where('code_meja',$no)->count();
+        if($qrcodeList>0){
+            do{//genereate random number for id pemesanan
+                $no_pesanan = random_int(100000, 999999);
+            }while(order::where('id',$no_pesanan)->get()->count() > 0);//check if the code available or not
+            return view('pages.customer.passtable', compact('no_pesanan','no_table'));   
+        } else {
+            return view('pages.customer.QRcodeNotFound');
         }
-        
-       
     }
 
 
