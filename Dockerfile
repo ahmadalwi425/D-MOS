@@ -1,6 +1,6 @@
 FROM php:7.4-apache
 
-WORKDIR /var/www/d-mos
+WORKDIR /var/www/dmos
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -28,11 +28,11 @@ RUN composer install --no-autoloader --no-scripts --no-dev
 
 COPY docker/ /
 RUN a2enmod rewrite headers \
-    && a2ensite d-mos \
+    && a2ensite dmos \
     && a2dissite 000-default \
-    && chmod +x /usr/local/bin/docker-d-mos-entrypoint
+    && chmod +x /usr/local/bin/docker-dmos-entrypoint
 
-COPY . /var/www/d-mos
+COPY . /var/www/dmos
 RUN composer install --optimize-autoloader --no-dev
 
-CMD ["docker-d-mos-entrypoint"]
+CMD ["docker-dmos-entrypoint"]

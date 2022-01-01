@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
-cd /var/www/d-mos
+cd /var/www/dmos
 
 role=${CONTAINER_ROLE:-app}
 if [[ -z "$APP_ENV" ]]; then
@@ -15,7 +15,7 @@ if [[ -z "$DB_CONNECTION" ]]; then
 fi
 
 if [[ -z "$APP_NAME" ]]; then
-    export APP_NAME=d-mos
+    export APP_NAME=dmos
     echo -e "\e[33mENV undefined: APP_NAME,\e[0m use default $APP_NAME"
 fi
 
@@ -76,9 +76,9 @@ fi
 
 chown www-data:www-data bootstrap/cache
 chown -R www-data:www-data storage/
-chown -R www-data.www-data /var/www/d-mos
-chmod -R 755 /var/www/d-mos
-chmod -R 777 /var/www/d-mos/storage
+chown -R www-data.www-data /var/www/dmos
+chmod -R 755 /var/www/dmos
+chmod -R 777 /var/www/dmos/storage
 
 
 if [[ "$DB_CONNECTION" = "sqlite" ]]; then

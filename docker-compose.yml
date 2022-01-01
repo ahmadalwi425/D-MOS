@@ -1,7 +1,7 @@
 version: "3"
 services:
     web:
-        image: alwi23/d-mos:latest
+        image: alwi23/dmos:latest
         container_name: web
         restart: unless-stopped
         ports:
