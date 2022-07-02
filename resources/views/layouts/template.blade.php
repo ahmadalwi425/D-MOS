@@ -131,7 +131,7 @@
 															// 		var temp_jumlah = '.$_COOKIE['jumlahorder'].' 
 															// 	</script>');
 															// }else{
-															// 	echo '<script>document.cookie = "jumlahorder={!! $total_order !!}; Secure";</script>';
+																// echo '<script>document.cookie = "jumlahorder={!! $total_order !!}; Secure";</script>';
 															// }
 														?>
 														
